@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Pollution Module - Level Selector</title>
+    <link rel="stylesheet" href="airpollLevelselect.css">
+</head>
+<body>
+
+    <div class="air-pollution-container">
+        <div class="city-skyline"></div>
+        <canvas id="smogCanvas"></canvas>
+        
+        <div class="level-selector-content">
+            <h1 class="module-title">Air Pollution</h1>
+            
+            <div id="level-path" class="level-path">
+                <!-- Level 1 -->
+                <div id="level-1" class="level-item completed">
+                    <div class="level-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="40" stroke="#282828" stroke-width="3"/>
+                            <circle cx="50" cy="50" r="30" stroke="#383838" stroke-width="2"/>
+                            <path d="M20 50 C30 40, 70 40, 80 50" stroke="#94ff5d" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M80 50 C70 60, 30 60, 20 50" stroke="#94ff5d" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M15 65 C25 55, 75 55, 85 65" stroke="#6b9e59" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M85 35 C75 45, 25 45, 15 35" stroke="#6b9e59" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="level-number">Level 1</span>
+                    <button id="start-1" class="level-start-btn">Start</button>
+                </div>
+
+                <div class="path-connector"></div>
+
+                <!-- Level 2 -->
+                <div id="level-2" class="level-item locked">
+                    <div class="level-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25" y="45" width="50" height="35" fill="#282828"/>
+                            <path d="M25 45 L50 25 L75 45 Z" fill="#282828"/>
+                            <path d="M60 25 Q55 15, 50 20 T45 10 Q50 5, 60 5 Z" fill="#6b9e59"/>
+                            <circle cx="20" cy="60" r="5" fill="#94ff5d"/>
+                            <circle cx="80" cy="50" r="4" fill="#6b9e59"/>
+                            <path d="M40 70 C40 65, 45 60, 50 60 C55 60, 60 65, 60 70" stroke="#4d4d4d" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="48" y="70" width="4" height="10" fill="#4d4d4d"/>
+                        </svg>
+                    </div>
+                    <span class="level-number">Level 2</span>
+                    <button id="start-2" class="level-start-btn" disabled>Start</button>
+                </div>
+
+                <div class="path-connector"></div>
+
+                <!-- Level 3 -->
+                <div id="level-3" class="level-item locked">
+                    <div class="level-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="55" width="80" height="15" fill="#282828"/>
+                            <rect x="10" y="70" width="80" height="15" fill="#4d4d4d"/>
+                            <rect x="20" y="58" width="20" height="10" fill="#6b9e59"/>
+                            <rect x="60" y="58" width="20" height="10" fill="#383838"/>
+                            <path d="M70 58 Q65 50, 60 50 T55 45 Q60 40, 70 40 Z" fill="rgba(200, 200, 200, 0.6)"/>
+                            <line x1="50" y1="55" x2="50" y2="45" stroke="#94ff5d" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="50" y1="45" x2="40" y2="50" stroke="#94ff5d" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="50" y1="45" x2="60" y2="50" stroke="#94ff5d" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="level-number">Level 3</span>
+                    <button id="start-3" class="level-start-btn" disabled>Start</button>
+                </div>
+
+                <div class="path-connector"></div>
+
+                <!-- Level 4 -->
+                <div id="level-4" class="level-item locked">
+                    <div class="level-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="75" width="80" height="15" fill="#282828"/>
+                            <path d="M20 75 Q30 65, 40 70 C50 65, 60 75, 70 70 Z" fill="rgba(200, 200, 200, 0.6)"/>
+                            <path d="M80 75 Q70 65, 60 70 C50 65, 40 75, 30 70 Z" fill="rgba(200, 200, 200, 0.6)"/>
+                            <rect x="45" y="45" width="10" height="25" fill="#4d4d4d" rx="2"/>
+                            <circle cx="50" cy="40" r="5" fill="#94ff5d"/>
+                            <line x1="50" y1="45" x2="50" y2="80" stroke="#94ff5d" stroke-width="2" stroke-linecap="round" stroke-dasharray="2, 2"/>
+                        </svg>
+                    </div>
+                    <span class="level-number">Level 4</span>
+                    <button id="start-4" class="level-start-btn" disabled>Start</button>
+                </div>
+
+                <div class="path-connector"></div>
+
+                <!-- Level 5 -->
+                <div id="level-5" class="level-item locked">
+                    <div class="level-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 80 L35 45 L65 45 L80 80 Z" fill="#282828"/>
+                            <path d="M35 45 Q50 30, 65 45" stroke="#383838" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="30" cy="60" r="2" fill="#6b9e59"/>
+                            <circle cx="45" cy="55" r="2" fill="#6b9e59"/>
+                            <circle cx="60" cy="50" r="2" fill="#6b9e59"/>
+                            <circle cx="75" cy="45" r="2" fill="#6b9e59"/>
+                            <circle cx="40" cy="65" r="5" fill="#94ff5d"/>
+                            <circle cx="65" cy="70" r="5" fill="#94ff5d"/>
+                        </svg>
+                    </div>
+                    <span class="level-number">Level 5</span>
+                    <button id="start-5" class="level-start-btn" disabled>Start</button>
+                </div>
+
+                <div class="path-connector"></div>
+
+                <!-- Level 6 -->
+                <div id="level-6" class="level-item locked">
+                    <div class="level-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="40" width="60" height="40" fill="#282828"/>
+                            <rect x="40" y="25" width="20" height="15" fill="#383838"/>
+                            <path d="M50 25 Q45 15, 40 20 T35 10 Q40 5, 50 5 Z" fill="rgba(200, 200, 200, 0.6)"/>
+                            <rect x="40" y="25" width="20" height="5" fill="#6b9e59"/>
+                            <path d="M50 25 Q45 15, 40 20 T35 10 Q40 5, 50 5 Z" fill="rgba(200, 200, 200, 0.6)"/>
+                            <rect x="42" y="30" width="16" height="4" fill="#94ff5d"/>
+                            <path d="M80 60 C80 50, 90 50, 90 40" stroke="#94ff5d" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M80 60 C80 70, 90 70, 90 80" stroke="#94ff5d" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="level-number">Level 6</span>
+                    <button id="start-6" class="level-start-btn" disabled>Start</button>
+                </div>
+
+                <div class="path-connector"></div>
+
+                <!-- Level 7 -->
+                <div id="level-7" class="level-item locked">
+                    <div class="level-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="15" y="45" width="20" height="40" fill="#282828"/>
+                            <rect x="40" y="30" width="25" height="55" fill="#383838"/>
+                            <rect x="70" y="55" width="15" height="30" fill="#282828"/>
+                            <path d="M0 65 C20 55, 80 55, 100 65" stroke="rgba(200, 200, 200, 0.6)" stroke-width="4"/>
+                            <rect x="35" y="15" width="30" height="10" fill="#6b9e59"/>
+                            <path d="M50 25 L40 35 L60 35 L50 25 Z" fill="#6b9e59"/>
+                            <rect x="45" y="10" width="10" height="5" fill="#4d4d4d"/>
+                        </svg>
+                    </div>
+                    <span class="level-number">Level 7</span>
+                    <button id="start-7" class="level-start-btn" disabled>Start</button>
+                </div>
+
+                <div class="path-connector"></div>
+
+                <!-- Level 8 -->
+                <div id="level-8" class="level-item locked">
+                    <div class="level-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 85 C45 80, 40 70, 40 60 C40 50, 60 50, 60 60 C60 70, 55 80, 50 85 Z" fill="#282828"/>
+                            <rect x="48" y="55" width="4" height="20" fill="#383838"/>
+                            <path d="M45 55 C40 50, 35 40, 40 35 C45 30, 55 30, 60 35 C65 40, 60 50, 55 55" fill="#6b9e59"/>
+                            <rect x="65" y="70" width="10" height="15" fill="#4d4d4d" rx="2"/>
+                            <path d="M75 75 C70 70, 65 70, 60 75" stroke="#4d4d4d" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="level-number">Level 8</span>
+                    <button id="start-8" class="level-start-btn" disabled>Start</button>
+                </div>
+
+                <div class="path-connector"></div>
+
+                <!-- Level 9 -->
+                <div id="level-9" class="level-item locked">
+                    <div class="level-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="50" width="30" height="40" fill="#282828"/>
+                            <rect x="20" y="20" width="10" height="30" fill="#383838"/>
+                            <path d="M25 20 Q20 10, 15 15 T10 5 Q15 0, 25 0 Z" fill="rgba(200, 200, 200, 0.6)"/>
+                            <path d="M50 10 L50 90" stroke="#383838" stroke-width="2"/>
+                            <rect x="60" y="50" width="5" height="40" fill="#383838"/>
+                            <path d="M62.5 50 L55 55 L70 55 Z" fill="#4d4d4d"/>
+                            <path d="M62.5 50 L55 45 L70 45 Z" fill="#4d4d4d"/>
+                            <line x1="62.5" y1="50" x2="62.5" y2="40" stroke="#94ff5d" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M75 25 Q70 20, 65 25 T60 20 Q65 15, 75 15 Z" fill="#94ff5d"/>
+                        </svg>
+                    </div>
+                    <span class="level-number">Level 9</span>
+                    <button id="start-9" class="level-start-btn" disabled>Start</button>
+                </div>
+
+                <div class="path-connector"></div>
+
+                <!-- Level 10 -->
+                <div id="level-10" class="level-item locked">
+                    <div class="level-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="40" fill="#282828"/>
+                            <path d="M30 40 C45 35, 60 40, 70 30" stroke="#4d4d4d" stroke-width="2"/>
+                            <path d="M25 55 C40 50, 55 55, 70 50" stroke="#4d4d4d" stroke-width="2"/>
+                            <path d="M35 70 C50 65, 65 70, 80 65" stroke="#4d4d4d" stroke-width="2"/>
+                            <path d="M30 40 L30 55 L50 55 L50 40 Z" fill="#94ff5d"/>
+                            <circle cx="40" cy="47.5" r="5" fill="#1c1c1c"/>
+                            <circle cx="50" cy="50" r="5" fill="#1c1c1c"/>
+                        </svg>
+                    </div>
+                    <span class="level-number">Level 10</span>
+                    <button id="start-10" class="level-start-btn" disabled>Start</button>
+                </div>
+
+                <div class="path-connector"></div>
+
+            </div>
+
+            <div class="top-menu">
+                <button class="menu-btn reset-progress">Reset Progress</button>
+                <button class="menu-btn back-to-modules">Back to Choose Modules</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="airpollLevelselect.js"></script>
+</body>
+</html>
